@@ -1,2 +1,4 @@
-# todo
-Simple todo application
+# TODO
+
+Simple todo application.
+**Developed in learning purpouses.**
