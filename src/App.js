@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+class App extends React.Component {
+    constructor(props) {
+     super(props);
+
+     this.state = {
+       counter: 0
+     };
+    }
+    handleClick() {
+      this.setState({
+        counter: this.state.counter + 1
+      });
+    }
+
+    render() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+        Счётчик сейчас равен {this.state.counter}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <button type="button" onClick={this.handleClick.bind(this)}>Увеличить Счётчик</button>
       </header>
     </div>
   );
+}
 }
 
 export default App;
