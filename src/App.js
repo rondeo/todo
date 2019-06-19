@@ -13,7 +13,7 @@ class App extends React.Component {
          text: "Помыть посуду"
        },
        {
-        text: "сделвть уроки"
+        text: "Помыть посуду"
       },
       {
         text: "Помыть посуду"

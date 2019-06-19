@@ -1,0 +1,10 @@
+.todos {
+    margin: 40px auto 0 auto;
+    max-width: 480px;
+}
+
+.todos ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
