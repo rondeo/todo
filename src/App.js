@@ -10,16 +10,20 @@ class App extends React.Component {
     render() {
       const tasks = [
        {
-         text: "Помыть посуду"
+         id:1,
+         text: "1"
        },
        {
-        text: "Помыть посуду"
+        id:2,
+        text: "2"
       },
       {
-        text: "Помыть посуду"
+        id:3,
+        text: "3"
       },
       {
-        text: "Помыть посуду"
+        id:4,
+        text: "4"
       },
       ]
   return (

@@ -2,6 +2,8 @@ import React from 'react';
 import { Todo } from './Todo';
 import "./Todos.css";
 
+let idShift = 1000; 
+
 export class Todos extends React.Component {
     constructor(props) {
         super(props);
@@ -10,24 +12,44 @@ export class Todos extends React.Component {
 
         this.state = {
             tasks: tasks || [],
-            newTaskText:'Привет, новая пременная!'
+            newTaskText: ''
         };
     }
 
     handleChange(event) {
-         this.setState({
-         newTaskText: event.target.value
-         });
+        this.setState({
+            newTaskText: event.target.value
+        });
+    }
+
+    handleAddTask() {
+        const { newTaskText } = this.state;
+        
+        if (newTaskText.length == 0) {
+            alert("Введите текст задачи!");
+            return;
+        }
+
+        this.setState({
+            tasks: [
+                {
+                    id: idShift++,
+                    text: newTaskText
+                },
+                ...this.state.tasks
+            ],
+            newTaskText: ''
+        });
     }
 
     render() {
         const { tasks, newTaskText } = this.state;
 
         return <div className="todos">
-           <input value={newTaskText} onChange={this.handleChange.bind(this)} type="text" placeholder="Введите новую задачу"></input>
-            <button type="button">Добавить</button>
+            <input value={newTaskText} onChange={this.handleChange.bind(this)} type="text" placeholder="Введите новую задачу"></input>
+            <button onClick={this.handleAddTask.bind(this)} type="button">Добавить</button>
             <ul>
-                {tasks.map(task => <Todo key={task.text} task={task}></Todo>)}
+                {tasks.map(task => <Todo key={task.id} task={task}></Todo>)}
             </ul>
         </div>;
     }
