@@ -9,14 +9,23 @@ export class Todos extends React.Component {
         const { tasks } = props;
 
         this.state = {
-            tasks: tasks || []
+            tasks: tasks || [],
+            newTaskText:'Привет, новая пременная!'
         };
     }
 
+    handleChange(event) {
+         this.setState({
+         newTaskText: event.target.value
+         });
+    }
+
     render() {
-        const { tasks } = this.state;
+        const { tasks, newTaskText } = this.state;
 
         return <div className="todos">
+           <input value={newTaskText} onChange={this.handleChange.bind(this)} type="text" placeholder="Введите новую задачу"></input>
+            <button type="button">Добавить</button>
             <ul>
                 {tasks.map(task => <Todo key={task.text} task={task}></Todo>)}
             </ul>
