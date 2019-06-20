@@ -2,7 +2,7 @@
     background-color: purple;
     padding: 6px 24px;
     font-size: 14px;
-    color: white;
+    color: cornsilk
 }
 
 .todo:first-child {
@@ -17,4 +17,28 @@
 
 .todo:not(:last-child) {
     border-bottom: 1px solid #ccd2de;
+}
+
+.todo i {
+    cursor: pointer;
+    font-size: 16px;
+    color: #c0c1c1;
+}
+
+.todo i:hover {
+    color: #979e9e;
+}
+
+.todo .todo-text {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.todo.completed {
+
+
+
+
 }
